@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='/socket.io/socket.io.js'></script>
+    <title>Simple Tic-Tac-Toe Game</title>
+    <style>
+        /* Add some basic styling for the grid */
+        .tictactoe-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px); /* 3 columns */
+            grid-gap: 5px; /* Gap between grid cells */
+            margin: 20px auto; /* Center the grid */
+
+            /* Add some padding around the grid cells */
+            padding: 5px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cell:hover {
+            background: #eee;
+        }
+
+        .x {
+            color: #f00;
+        }
+
+        .circle {
+            color: #00f;
+        }
+
+        .winning-message {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border: 2px solid #000;
+        }
+
+        .winning-message-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+        }
+
+        .restart-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .restart-button:hover {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="tictactoe-grid" id="board">
+        <!-- Create 9 cells for the Tic-Tac-Toe grid -->
+        <div class="cell">
+            <!-- Add the X or O symbol here -->
+
+        </div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+
+    <div class="buttons">
+        <button class="restart-button">Restart Game</button>
+    </div>
+    <div class="winning-message">
+        <h1 class="winning-message-text"></h1>
+    </div>
+
+  <script src="js/index.js"></script>
+</body>
+</html>
